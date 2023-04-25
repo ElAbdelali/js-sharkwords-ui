@@ -25,12 +25,24 @@ const numWrong = 0;
 //
 const createDivsForChars = (word) => {
   // Replace this with your code
+
+  for (let letter of word) {
+        // queryselector word-container insertadjacentHTML(beforeend, 
+        // `<div class="letter-box ${letter}"></div>`
+      document.getElementById('word-container').insertAdjacentHTML('beforeend', `<div class="letter-box ${letter}"></div>`);
+  }
 };
 
 // Loop over each letter in the alphabet and generate a button for each letter
 // The buttons should be appended to the section with id="letter-buttons".
 const generateLetterButtons = () => {
   // Replace this with your code
+  // queryselector letter-buttons insertadjacentHTML(beforeend, 
+  // '<button class='letter-buttons ${letter}'>${letter}</button>' 
+  for (let letter of ALPHABET) {
+    document.getElementById("letter-buttons").insertAdjacentHTML('beforeend', 
+      `<button class="letter-buttons ${letter}">${letter}</button>`);
+  }
 };
 
 // Set the `disabled` property of `buttonEl` to true.
@@ -39,6 +51,12 @@ const generateLetterButtons = () => {
 //
 const disableLetterButton = (buttonEl) => {
   // Replace this with your code
+  // if letter button is clicked, buttonEl == true
+  //document.getElementById("disabled").setAttribute('disabled', 'true')
+  // document.getElementsByClassName(`button.letter-buttons.${letter}`).disabled = true
+  buttonEl.disabled = true
+
+
 };
 
 // This is a helper function we will use in the future
